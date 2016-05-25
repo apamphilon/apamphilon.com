@@ -1,0 +1,360 @@
+// home
+.home-cta {
+  box-shadow: 0 1px 5px #c1c1c1;
+	position: relative;
+	color: $white;
+	background: $brand;
+  background-image: url('_img/header-bg.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+  @media only screen and (max-width: 810px) {
+  	height: 520px;
+  	background-attachment: scroll;
+  }
+  .overlay-bg {
+    background: rgba(119, 123, 170, 0.7);
+	}
+  .wrapper {
+  	z-index: 200;
+  	position: relative;
+  }
+  .table-outer {
+  	position: fixed;
+  	z-index: 100;
+  	@media only screen and (max-width: 810px) {
+  		position: absolute;
+  	}
+  }
+  .text-wrapper {
+    padding: 0 30px;
+  	margin: 0 auto;
+  	max-width: 1024px;
+  }
+	a {
+		color: $white;
+		text-decoration: none;
+		border-bottom: 1px solid $white;
+		outline: none;
+	}
+	h1 {
+		text-align: center;
+		color: $white;
+		font-family: $google;
+		@include font-size(60);
+		line-height: 80px;
+		@media only screen and (max-width: 810px) {
+      line-height: 40px;
+			@include font-size(30);
+		}
+		font-weight: 600;
+	  letter-spacing: 4px;
+	  font-family: $raleway;
+	  text-transform: uppercase;
+	}
+	h2 {
+		text-align: center;
+		@include font-size(24);
+		max-width: 550px;
+		margin: 0 auto;
+		line-height: 40px;
+		margin-bottom: 20px;
+		font-weight: 400;
+	}
+	p {
+		color: $white;
+		width: 550px;
+		margin: 0 auto;
+		text-align: center;
+		@include font-size(16);
+	}
+	.scroll-down {
+		position: absolute;
+		bottom: 5%;
+		left: 0;
+		right: 0;
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		z-index: 100;
+		text-align: center;
+		margin: 0 auto;
+		font-size: 40px;
+		color: white;
+		background: #777BAA;
+		border-radius: 100%;
+		border: none;
+		&:hover {
+			transform: scale(1.1,1.1);
+		}
+	}
+}
+
+.my-story {
+	.wrapper {
+		max-width: 700px;
+		text-align: center;
+	}
+	p {
+		@include font-size(18);
+		font-weight: 300;
+	}
+	a {
+		color: $black;
+		text-decoration: none;
+		border-bottom: 1px solid $brand2;
+	}
+	.btn {
+		margin-top: 50px;
+		@media only screen and (max-width: 768px) {
+			margin: 30px 0 20px;
+		}
+		color: $brand;
+		border-bottom: 2px solid $brand;
+		&:hover {
+			color: $white;
+		}
+	}
+	.expand {
+		display: none;
+	}
+}
+
+.about-cta {
+	position: relative;
+	background: url('_img/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+	@media only screen and (max-width: 810px) {
+		background-attachment: scroll;
+	}
+  background-size: 100%;
+  background-position: center top;
+  text-align: center;
+	text-align: center;
+	.wrapper {
+		max-width: 700px;
+		z-index: 200;
+		position: relative;
+	}
+	.section-title {
+		color: $white;
+	}
+	p {
+		@include font-size(20);
+		color: $white;
+		line-height: 50px;
+		@media only screen and (max-width: 768px) {
+			line-height: 34px;
+		}
+	}
+	a {
+		color: $white;
+	}
+	.fa {
+		padding: 0 10px;
+		@include transition(all ease-in-out 0.3s);
+		&:hover {
+			color: $brand;
+		}
+	}
+}
+
+.my-services {
+  padding: 60px 0 0;
+  @media only screen and (max-width: 540px) {
+  	padding-bottom: 60px;
+  }
+	figure img {
+		width: 100px;
+		height: 100px;
+	}
+	.posts {
+		margin-right: -3%;
+		@media only screen and (max-width: 540px) {
+  		margin-right: 0;
+	  }
+		padding-bottom: 0;
+	}
+	.post {
+		border-radius: 0;
+		width: 30.33333333%;
+    margin-bottom: 9%;
+		@media only screen and (max-width: 768px) {
+			width: 47%;
+		}
+		@media only screen and (max-width: 540px) {
+			width: 100%;
+			margin-bottom: 60px;
+			padding-bottom: 60px;
+			border-bottom: 1px solid gainsboro;
+			&:last-child {
+				margin-bottom: 0;
+				padding-bottom: 0;
+				border-bottom: none;
+			}
+		}
+		figure {
+	    border-bottom: none;
+	  }
+	}
+	.post-title {
+		margin: 20px 0 30px;
+	}
+	.btn {
+		background: $brand2;
+		color: $white;
+		border: 2px solid transparent;
+		&:hover {
+			background: $brand;
+		}
+	}
+}
+
+.latest-posts {
+	background: darken($brand2, 20%);
+	.section-title {
+		color: $white;
+	}
+	.posts {
+		padding: 20px 0 40px;
+		margin-right: -3%;
+		@media only screen and (max-width: 540px) {
+			margin-right: 0;
+		}
+		@include font-size(0);
+		li {
+			@media only screen and (max-width: 880px) {
+				width: 46.7%;
+			}
+			@media only screen and (max-width: 540px) {
+				width: 100%;
+			 	margin: 0 auto 40px;
+			 	&:last-child {
+			 		margin-bottom: 0;
+			 	}
+			}
+			background: $white;
+			border-radius: 0;
+			border: none;
+			@include inline-block;
+			vertical-align: top;
+			float: none;
+			width: 30.12%;
+			margin-right: 3%;
+			margin-bottom: 3%;
+			figure {
+				border: none;
+			    position: relative;
+			    height: 300px;
+			    @media only screen and (max-width: 1140px) {
+			    	height: 250px;
+			    }
+			    @media only screen and (max-width: 960px) {
+			    	height: 250px;
+			    }
+			    @media only screen and (max-width: 880px) {
+			    	height: 300px;
+			    }
+			    @media only screen and (max-width: 768px) {
+			    	height: 250px;
+			    }
+			    @media only screen and (max-width: 768px) {
+			    	height: 350px;
+			    }
+			    @media only screen and (max-width: 480px) {
+			    	height: 280px;
+			    }
+			}
+			.bi {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
+			.post-title {
+				margin-bottom: 10px;
+			}
+			.post-date {
+				color: lighten($black, 40%);
+				margin-bottom: 20px;
+			}
+			.btn {
+				border: none;
+				background: $brand2;
+				&:hover {
+					border: none;
+				}
+			}
+		}
+	}
+	.btn {
+		background: $brand2;
+		border: 2px solid $brand2;
+		color: $white;
+		&:hover {
+			background: $brand;
+			border: 2px solid $brand;
+		}
+	}
+}
+
+.instagram-feed {
+	.wrapper {
+		max-width: $mainWidth+80px;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	#sb_instagram #sbi_images {
+		padding: 0 !important;
+		.sbi_item {
+			padding: 10px !important;
+		}
+	}
+}
+
+.my-story,
+.about-cta,
+.test,
+.services,
+.latest-posts,
+.instagram-feed {
+	padding: 75px 0;
+	@media only screen and (max-width: 768px) {
+		padding: 40px 0;
+	}
+}
+
+// home overides
+.page-template-homepage {
+	// header
+	.masthead {
+		background: transparent;
+		&.small-header {
+			background: $brand2;
+			.mastnav ul li.current_menu_item, .mastnav ul li.selected {
+				a {
+					color: $white !important;
+				}
+			}
+		}
+		.mastnav ul li a,
+		h1 a,
+		#menu-item-382 a,
+		#menu-item-383 a,
+		.mastnav ul:nth-child(2) .fa {
+			color: $white;
+		}
+	}
+	// footer
+	.footer-two .mastnav ul li a:hover {
+		color: #999;
+	}
+	.footer-two .mastnav ul li.current_page_item a:hover {
+		color: $white;
+	}
+}

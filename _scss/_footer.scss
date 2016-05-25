@@ -1,0 +1,469 @@
+.footer-one,
+.footer-two,
+.footer-twitter,
+.footer-social {
+  position: relative;
+  z-index: 100;
+}
+
+.contact-footer {
+	display: none;
+	overflow: auto;
+	background: darken($brand2, 0%);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	padding: 55px 0;
+	@media only screen and (max-width: 640px) {
+		padding-top: 130px;
+	}
+	z-index: 9999;
+	background-attachment: fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 -1200px;
+  &.show-contact {
+    display: block;
+  }
+  .overlay-bg {
+    background: darken($brand2, 0%);
+  }
+  // contact-close
+  .contact-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+    z-index: 999999;
+    background: url('_img/close-icon.svg') no-repeat;
+    width: 40px;
+    height: 40px;
+  }
+	.wrapper {
+		position: relative;
+		z-index: 200;
+		max-width: 800px;
+		padding: 0 40px;
+	}
+	.section-title {
+		@include font-size(60);
+		@media only screen and (max-width: 768px) {
+			@include font-size(50);
+		}
+		@media only screen and (max-width: 490px) {
+			@include font-size(40);
+		}
+		@media only screen and (max-width: 370px) {
+			@include font-size(35);
+		}
+		color: $white;
+		text-align: center;
+	}
+	p {
+		text-align: center;
+		max-width: 768px;
+		margin: 40px auto;
+		@include font-size(18);
+		line-height: 30px;
+		color: $white;
+	}
+	form {
+		max-width: 960px;
+		margin: 0 auto;
+		@extend %clearfix;
+	}
+	.gfield.left,
+	.gfield.right {
+		@media only screen and (max-width: 490px) {
+			width: 100%;
+			float: none;
+		}
+	}
+	input,
+	textarea {
+		background: darken($brand2, 2%);
+		border: 1px solid $white;
+		border: 1px solid rgba(255,255,255,0.5);
+		color: $white;
+		&::-webkit-input-placeholder {
+			color: $white;
+		}
+
+		&:-moz-placeholder { // firefox 18-
+			color: $white;
+		}
+
+		&::-moz-placeholder {  // firefox 19+
+			color: $white;
+		}
+
+		&:-ms-input-placeholder {
+			color: $white;
+		}
+		&:focus {
+			background: darken($brand2, 5%);
+			color: $white;
+		}
+	}
+	textarea {
+		height: 170px;
+	}
+	input[type="submit"] {
+		background: darken($brand2, 2%);
+		color: $white;
+		&:hover {
+			background: darken($brand2, 5%);
+		}
+	}
+	.social-links {
+		margin-top: 50px;
+		.fa {
+			color: $white;
+		}
+	}
+}
+
+.work-availability {
+	padding: 30px 0;
+	background: #f2f2f2;
+	.section-title {
+		font-family: $google;
+		margin-bottom: 0;
+		@include font-size(20);
+		line-height: 22px;
+		font-weight: 500;
+		span {
+			color: green;
+		}
+	}
+}
+
+.footer-twitter {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00b9eb+0,007fa5+86 */
+	background: #00b9eb; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #00b9eb 0%, #007fa5 86%); /* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover,  #00b9eb 0%,#007fa5 86%); /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center,  #00b9eb 0%,#007fa5 86%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b9eb', endColorstr='#007fa5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	padding: 35px 0 85px;
+	background: #353c44;
+	.wrapper {
+		max-width: 700px;
+	}
+	.section-title {
+		text-align: center;
+		color: $white;
+	}
+	img {
+		margin-left: -90px;
+		margin-bottom: -50px;
+	}
+	.tweet-me {
+		@include inline-block;
+		color: darken($white, 30%);
+		text-decoration: none;
+		padding: 20px;
+		border-radius: 3px;
+		font-weight: 500;
+		text-transform: capitalize;
+		margin-top: 40px;
+		background: $brand2;
+		color: $white;
+		&:hover {
+			background: $brand;
+		}
+		.border {
+			padding-right: 10px;
+		}
+	}
+}
+
+#tweets {
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 0 60px;
+	@include font-size(20);
+	@media only screen and (max-width: 540px) {
+		@include font-size(18);
+		line-height: 28px;
+	}
+	line-height: 32px;
+	text-align: center;
+	color: $white;
+	a {
+		color: #728192;
+		text-decoration: none;
+		outline: none;
+		&:hover {
+			color: $white;
+		}
+	}
+	.meta, a {
+		padding-left: 5px;
+		word-break: break-all;
+	}
+	.tweet {
+		padding: 20px;
+		.table {
+			height: 150px;
+		}
+	}
+	.slick-prev,
+	.slick-next {
+		@include transition(all ease-in-out 0.3s);
+		margin-top: -12px;
+		background-size: contain;
+		width: 15px;
+		height: 24px;
+		&:hover {
+			transform: scale(1.3,1.3);
+		}
+	}
+	.slick-prev {
+		left: 0;
+		background: url('_img/twitter-prev.svg') no-repeat;
+	}
+	.slick-next {
+		right: 0;
+		background: url('_img/twitter-next.svg') no-repeat;
+	}
+	.intents {
+		margin-top: 20px;
+	}
+	.intent {
+		padding: 0 10px;
+		@include font-size(18);
+		@media only screen and (max-width: 480px) {
+			display: block;
+			line-height: 50px;
+		}
+	}
+}
+
+.footer-social {
+	padding: 80px 0 64px;
+	@media only screen and (max-width: 768px) {
+		padding: 40px 0 24px;
+	}
+	text-align: center;
+	background: #1b1f23;
+	background: #292f35;
+	@media only screen and (max-width: 450px) {
+		.wrapper {
+			max-width: 330px;
+		}
+	}
+	.title {
+		@include font-size(20);
+		margin-bottom: 30px;
+	}
+}
+
+.social-links {
+	text-align: center;
+	li {
+		@include inline-block;
+		border-radius: 100%;
+		margin: 0 8px 16px;
+		@include transition(all ease-in-out 0.3s);
+		a {
+			text-decoration: none;
+		}
+		&:hover {
+			transform: scale(1.1,1.1);
+		}
+	}
+	.border {
+		display: table;
+		border-radius: 100%;
+		border: 1px solid darken($white, 20%);
+		@include transition(all ease-in-out 0.3s);
+	}
+	.fa {
+		width: 45px;
+		height: 45px;
+		display: table-cell;
+		border-radius: 100%;
+		text-align: center;
+		vertical-align: middle;
+		@include transition(all ease-in-out 0.3s);
+		@include font-size(20);
+		color: darken($white, 10%);
+		color: rgba(255,255,255,0.5);
+	}
+	.facebook:hover {
+		.fa {
+			color: $white;
+			background: rgb(59, 89, 152);
+		}
+		.border {
+			border: 1px solid rgb(59, 89, 152);
+		}
+	}
+	.twitter:hover {
+		.fa {
+			color: $white;
+			background: #55acee;
+		}
+		.border {
+			border: 1px solid rgb(0, 172, 237);
+		}
+	}
+	.linked-in:hover {
+		.fa {
+			color: $white;
+			background: rgb(0, 123, 182);
+		}
+		.border {
+			border: 1px solid rgb(0, 123, 182);
+		}
+	}
+	.git-hub:hover {
+		.fa {
+			color: $white;
+			background: rgb(23, 21, 22);
+		}
+		.border {
+			border: 1px solid rgb(23, 21, 22);
+		}
+	}
+	.codepen:hover {
+		.fa {
+			color: $white;
+			background: rgb(0, 0, 0);
+		}
+		.border {
+			border: 1px solid rgb(0, 0, 0);
+		}
+	}
+	.flickr:hover {
+		.fa {
+			color: $white;
+			background: #ff0084;
+		}
+		.border {
+			border: 1px solid #ff0084;
+		}
+	}
+	.soundcloud:hover {
+		.fa {
+			color: $white;
+			background: #f50;
+		}
+		.border {
+			border: 1px solid #f50;
+		}
+	}
+}
+
+.footer-two {
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #1b1f23;
+	padding: 20px 0;
+	@media only screen and (max-width: 768px) {
+		padding: 40px 0;
+	}
+	@extend %clearfix;
+	.mastnav {
+		float: left;
+		@media only screen and (max-width: 768px) {
+			padding: 0 0 40px;
+			width: 100%;
+			text-align: center;
+			ul {
+				float: none;
+			}
+		}
+		ul li {
+			@media only screen and (max-width: 410px) {
+				display: block;
+				margin: 0;
+				line-height: 40px;
+			}
+			margin-right: 0;
+			padding: 0;
+			margin-right: 20px;
+			margin-left: 0;
+			&:last-child {
+				margin-right: 0;
+			}
+			&:hover,
+			&.current_page_item {
+				background: transparent;
+			}
+			&.current_page_item a {
+				color: $white;
+				&:hover {
+					border-bottom: none;
+				}
+			}
+			a {
+				@include transition(all ease-in-out 0.2s);
+				padding: 0;
+				@include font-size(14);
+				color: darken($white, 40%);
+				font-weight: 400;
+				border-bottom: 1px solid transparent;
+				text-transform: none;
+				line-height: normal;
+				&:hover {
+					border-bottom: 1px solid;
+				}
+			}
+		}
+	}
+	.copywrite {
+		color: #999;
+		float: right;
+		@include font-size(14);
+		@media only screen and (max-width: 340px) {
+			line-height: 30px;
+		}
+		font-family: $mainFont;
+		@include inline-block;
+		@media only screen and (max-width: 768px) {
+			float: none;
+		    width: 100%;
+		    text-align: center;
+		    display: inline-block;
+		}
+		a {
+			@include transition(all ease-in-out 0.3s);
+			@include inline-block;
+			margin-left: 5px;
+			color: #999;
+			text-decoration: none;
+			line-height: normal;
+			border-bottom: 1px solid transparent;
+			&:hover {
+				border-bottom: 1px solid darken($white, 60%);
+			}
+		}
+	}
+}
+
+// nav hightlighting
+.single-post .footer-two .menu-item-19, .blog .footer-two .menu-item-19,
+.single-snippets .footer-two .menu-item-384, .post-type-archive-snippets .footer-two .menu-item-384 {
+	background: transparent;
+	a {
+		color: $white;
+	}
+}
+
+.footer-two .menu-item-382,
+.footer-two .menu-item-383 {
+	background: transparent;
+	a {
+		color: darken($white, 40%) !important;
+		&:hover {
+			border-bottom: 1px solid !important;
+		}
+	}
+}

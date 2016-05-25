@@ -1,0 +1,542 @@
+a {
+	@include transition(all ease-in-out 0.3s);
+}
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $google;
+  font-weight: 400;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+	&.contact-open {
+		overflow: hidden;
+	}
+}
+
+//helper classes
+// wrappers
+.wrapper {
+	max-width: $mainWidth+px;
+	margin: 0 auto;
+	padding: 0 20px;
+	@extend %clearfix;
+}
+
+.page-wrap {
+	margin-top: 60px;
+    position: relative;
+    z-index: 110;
+    .page-template-homepage & {
+        margin-top: 0;
+    }
+}
+
+.main {
+    padding: 40px 0;
+	>.wrapper {
+		position: relative;
+	}
+}
+
+// wordpress
+.pagination {
+  @extend %clearfix;
+  text-align: center;
+  padding: 70px 0;
+  margin: 0 auto;
+  .page-numbers {
+    text-decoration: none;
+    @include transition(all ease-in-out 0.3s);
+    padding: 0 10px;
+    background: $brand;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: $white;
+    border-radius: 3px;
+    &.current,
+    &:hover {
+      background: $brand;
+      color: $white;
+    }
+  }
+}
+
+.wysiwyg {
+	a {
+		color: $black;
+		color: rgba(0,0,0,0.8);
+	}
+}
+
+.table-outer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.table-cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.overlay {
+	@include opacity(0);
+	@include transition(all ease-in-out 0.2s);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.bi {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+// wordpress
+.alignleft {
+	float: left;
+	margin-right: 15px;
+	margin-bottom: 15px;
+}
+.alignright {
+	float: right;
+	margin-left: 15px;
+	margin-bottom: 15px;
+}
+
+// orange gradient
+.orange-grad {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fb9105+0,f9aa43+100 */
+	background: #fb9105; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #fb9105 0%, #f9aa43 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #fb9105 0%,#f9aa43 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  #fb9105 0%,#f9aa43 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb9105', endColorstr='#f9aa43',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+// layout
+.col-left {
+	float: left;
+	width: 70%;
+    @media only screen and (max-width: 840px) {
+        float: none;
+        width: 100%;
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid gainsboro;
+    }
+}
+
+.col-right {
+    float: right;
+    width: 25%;
+    @media only screen and (max-width: 840px) {
+        float: none;
+        width: 100%;
+    }
+}
+
+.feature-box {
+  background: #ececec;
+  margin-bottom: 20px;
+  padding: 20px;
+  h3 {
+    @include font-size(20);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  a {
+    @include font-size(14);
+    text-decoration: none;
+    line-height: 21px;
+    color: darken($brand2, 35%);
+    border-bottom: 1px solid transparent;
+    @include transition(all ease-in-out 0.3s);
+    &:hover {
+      border-bottom: 1px solid;
+    }
+  }
+  li {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// misc
+.overlay-bg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.7);
+	z-index: 100;
+}
+
+// buttons
+.btn {
+	@include inline-block;
+	border: 2px solid $brand;
+	padding: 10px 20px;
+	text-decoration: none;
+	color: $brand;
+	font-family: $raleway;
+	font-weight: 600;
+	@include font-size(20);
+	@include transition(all ease-in-out 0.3s);
+	&:hover {
+		background: $brand;
+		color: $white;
+	}
+}
+
+.btn-wrapper {
+	text-align: center;
+}
+
+//plugins
+//wow.js
+.wow {
+   visibility: hidden;
+   .no-js & {
+		visibility: visible;
+   }
+}
+
+//code syntax highlighting/markdown
+pre[class*="language-"] {
+	margin-bottom: 25px;
+}
+
+//gist embed
+.oembed-gist {
+	margin-bottom: 25px;
+}
+
+//instagram
+.sb_instagram_header {
+	display: none;
+}
+
+#sbi_load {
+	padding-top: 50px !important;
+}
+
+#sb_instagram #sbi_load .sbi_load_btn,
+#sb_instagram #sbi_load .sbi_follow_btn a {
+  min-width: 260px;
+  @include inline-block;
+  border: 2px solid lighten($brand2, 10%);
+  padding: 10px 20px;
+  margin: 0 10px;
+  text-decoration: none;
+  color: lighten($brand2, 10%);
+  font-family: $raleway;
+  font-weight: 600;
+  @include font-size(20);
+  background: transparent;
+  border-radius: 0;
+  line-height: normal;
+  &:hover {
+    background: darken($brand2, 30%);
+    background: $brand2;
+    color: $white;
+    border: 2px solid $brand2;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #sb_instagram {
+    padding-bottom: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  #sb_instagram #sbi_load .sbi_load_btn,
+  #sb_instagram #sbi_load .sbi_follow_btn,
+  #sb_instagram #sbi_load .sbi_follow_btn a {
+    display: block;
+    margin: 0;
+  }
+  #sb_instagram #sbi_load .sbi_load_btn {
+    margin-bottom: 40px;
+  }
+}
+
+//featured box
+.featured-box {
+  box-shadow: 0 2px 5px #dadada;
+}
+
+//table default
+table {
+	width: 100%;
+	margin: 30px 0;
+	th, td {
+		padding: 15px;
+		border: 1px solid #dedede;
+	}
+	th {
+		font-weight: 600;
+	}
+}
+
+// plugins
+// preloader
+#preloader {
+  z-index: 99999;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('_img/loader.gif') 50% 50% no-repeat $brand2;
+}
+
+// jquery ui autocomplete
+.ui-autocomplete {
+  position: absolute;
+  cursor: default;
+  z-index: 9999;
+  max-width: 313px;
+}
+
+/**
+ * Tooltip Styles
+ */
+
+/* Base styles for the element that has a tooltip */
+[data-tooltip],
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Base styles for the entire tooltip */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after {
+  position: absolute;
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition:
+	  opacity 0.2s ease-in-out,
+		visibility 0.2s ease-in-out,
+		-webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+	-moz-transition:
+		opacity 0.2s ease-in-out,
+		visibility 0.2s ease-in-out,
+		-moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+	transition:
+		opacity 0.2s ease-in-out,
+		visibility 0.2s ease-in-out,
+		transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform:    translate3d(0, 0, 0);
+  transform:         translate3d(0, 0, 0);
+  pointer-events: none;
+}
+
+/* Show the entire tooltip on hover and focus */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* Base styles for the tooltip's directional arrow */
+.tooltip:before,
+[data-tooltip]:before {
+  z-index: 1001;
+  border: 6px solid transparent;
+  background: transparent;
+  content: "";
+}
+
+/* Base styles for the tooltip's content area */
+.tooltip:after,
+[data-tooltip]:after {
+  z-index: 1000;
+  padding: 8px;
+  width: 160px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Directions */
+
+/* Top (default) */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after,
+.tooltip-top:before,
+.tooltip-top:after {
+  bottom: 100%;
+  left: 50%;
+}
+
+[data-tooltip]:before,
+.tooltip:before,
+.tooltip-top:before {
+  margin-left: -6px;
+  margin-bottom: -12px;
+  border-top-color: #000;
+  border-top-color: hsla(0, 0%, 20%, 0.9);
+}
+
+/* Horizontally align top/bottom tooltips */
+[data-tooltip]:after,
+.tooltip:after,
+.tooltip-top:after {
+  margin-left: -80px;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after,
+.tooltip-top:hover:before,
+.tooltip-top:hover:after,
+.tooltip-top:focus:before,
+.tooltip-top:focus:after {
+  -webkit-transform: translateY(-12px);
+  -moz-transform:    translateY(-12px);
+  transform:         translateY(-12px);
+}
+
+/* Left */
+.tooltip-left:before,
+.tooltip-left:after {
+  right: 100%;
+  bottom: 50%;
+  left: auto;
+}
+
+.tooltip-left:before {
+  margin-left: 0;
+  margin-right: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-left-color: #000;
+  border-left-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-left:hover:before,
+.tooltip-left:hover:after,
+.tooltip-left:focus:before,
+.tooltip-left:focus:after {
+  -webkit-transform: translateX(-12px);
+  -moz-transform:    translateX(-12px);
+  transform:         translateX(-12px);
+}
+
+/* Bottom */
+.tooltip-bottom:before,
+.tooltip-bottom:after {
+  top: 100%;
+  bottom: auto;
+  left: 50%;
+}
+
+.tooltip-bottom:before {
+  margin-top: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-bottom-color: #000;
+  border-bottom-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-bottom:hover:before,
+.tooltip-bottom:hover:after,
+.tooltip-bottom:focus:before,
+.tooltip-bottom:focus:after {
+  -webkit-transform: translateY(12px);
+  -moz-transform:    translateY(12px);
+  transform:         translateY(12px);
+}
+
+/* Right */
+.tooltip-right:before,
+.tooltip-right:after {
+  bottom: 50%;
+  left: 100%;
+}
+
+.tooltip-right:before {
+  margin-bottom: 0;
+  margin-left: -12px;
+  border-top-color: transparent;
+  border-right-color: #000;
+  border-right-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-right:hover:before,
+.tooltip-right:hover:after,
+.tooltip-right:focus:before,
+.tooltip-right:focus:after {
+  -webkit-transform: translateX(12px);
+  -moz-transform:    translateX(12px);
+  transform:         translateX(12px);
+}
+
+/* Move directional arrows down a bit for left/right tooltips */
+.tooltip-left:before,
+.tooltip-right:before {
+  // top: 3px;
+  top: 50%;
+  margin-top: -6px;
+}
+
+/* Vertically center tooltip content for left/right tooltips */
+.tooltip-left:after,
+.tooltip-right:after {
+  margin-left: 0;
+  margin-bottom: -16px;
+}

@@ -1,0 +1,84 @@
+$google: 'Open Sans', sans-serif;
+$raleway: 'Raleway', sans-serif;
+
+$mainFont: $google;
+
+body {
+	color: #777;
+}
+
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: 600;
+}
+
+a {
+	@include transition(all ease-in-out 0.1s);
+}
+
+p {
+	font-family: $mainFont;
+	color: $black;
+	color: rgba(0,0,0,0.8);
+	color: darken($brand2, 35%);
+	margin-bottom: 25px;
+	@include font-size(16);
+	line-height: 28px;
+	font-weight: 400;
+	&:last-child {
+		margin-bottom: 0;
+	}
+	&.small {
+		line-height: 1.5;
+	}
+}
+
+.section-title {
+	@include font-size(40);
+	line-height: 55px;
+	margin-bottom: 50px;
+	@media only screen and (max-width: 768px) {
+		margin-bottom: 30px;
+	}
+	text-align: center;
+	color: darken($brand2, 35%);
+	font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $black;
+	color: #505271;
+	color: rgba(0,0,0,0.8);
+	font-family: $raleway;
+	font-weight: 400;
+}
+
+h1 {
+	@include font-size(30);
+	line-height: 45px;
+}
+
+small {
+	font-size: smaller;
+	font-weight: 300;
+}
+
+// code styling
+pre[class*="language-"] {
+	@include font-size(14);
+}
+
+blockquote {
+  padding: 50px;
+	border-bottom: 1px solid gainsboro;
+  border-top: 1px solid gainsboro;
+  font-style: italic;
+  margin-bottom: 25px;
+  p {
+	  @include font-size(30);
+	  line-height: 40px;
+  }
+}
