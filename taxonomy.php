@@ -30,7 +30,8 @@
 							<a href="<?php the_permalink(); ?>">
 								<article>
 									<div class="post-text-wrapper">
-										<h2 class="post-title match-height"><?php the_title(); ?></h2>										</div>
+										<h2 class="post-title match-height"><?php the_title(); ?></h2>
+                  </div>
 								</article>
 							</a>
 						</div>

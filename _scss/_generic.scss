@@ -207,8 +207,8 @@ body {
 	text-decoration: none;
 	color: $brand;
 	font-family: $raleway;
-	font-weight: 600;
-	@include font-size(20);
+	font-weight: 500;
+	@include font-size(18);
 	@include transition(all ease-in-out 0.3s);
 	&:hover {
 		background: $brand;
@@ -258,8 +258,8 @@ pre[class*="language-"] {
   text-decoration: none;
   color: lighten($brand2, 10%);
   font-family: $raleway;
-  font-weight: 600;
-  @include font-size(20);
+  font-weight: 500;
+  @include font-size(18);
   background: transparent;
   border-radius: 0;
   line-height: normal;
